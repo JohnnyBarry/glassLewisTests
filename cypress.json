@@ -1,1 +1,6 @@
-{}
+{
+  "env":{
+    "home_url": "https://viewpoint.glasslewis.com/WD/?siteId=DemoClient",
+    "home_page_title": "Sample Disclosure"
+  }
+}

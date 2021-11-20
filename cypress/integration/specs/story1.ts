@@ -1,19 +1,13 @@
-import homePageConfig from '../../pageConfigs/homePageConfig';
+import homePageUtil from '../../Utilities/HomePageUtil';
 
 describe('Story 1: Filter Meetings By Country', () => {
   beforeEach(() => {
-    cy.visit(homePageConfig.home_url);
+    homePageUtil.visitPage();
   });
 
-  it(`Browser url is set to ${homePageConfig.home_url}`, () => {
-    cy.url().should(
-      'eq',
-      homePageConfig.home_url
-    );
-  });
-
-  it(`Page title is ${homePageConfig.title}`, () => {
-    cy.title().should('eq', homePageConfig.title);
+  it(`The browser url is set to ${Cypress.env('home_url')}`, () => {
+    homePageUtil.assertPageUrl();
+    homePageUtil.assertPageTitle();
   });
 
   it('The Country Filter Element Is Visible', () => {
@@ -21,11 +15,12 @@ describe('Story 1: Filter Meetings By Country', () => {
   });
 
   it('The Country Filter Has A Belgium Option', () => {
-    cy.get('#Belgium-cb-label-CountryFilter');
+    cy.get('#Belgium-cb-label-CountryFilter').should('be.visible');
   });
 
   it('When the country is filtered to Belgium then all meetings are associated with Belgium', () => {
     cy.get('#Belgium-cb-label-CountryFilter').click();
+    cy.get('#Belgium-cb-CountryFilter').should('be.checked');
 
     cy.get('#filter-country #btn-update').click();
 
@@ -35,5 +30,4 @@ describe('Story 1: Filter Meetings By Country', () => {
         expect($td.text()).to.contain('Belgium');
       });
   });
-
 });
