@@ -4,7 +4,7 @@
   "description": "Test of Glass Lewis's Web Disclosure public site",
   "main": "index.js",
   "scripts": {
-    "prettierts": "prettier --config .prettierrc \"src/**/*.ts\" --write",
+    "prettierts": "prettier --config .prettierrc \"**/*.ts\" --write",
     "test": "cypress open"
   },
   "repository": {
