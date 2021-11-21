@@ -18,9 +18,13 @@ describe('Story 1: Filter Meetings By Country', () => {
     cy.get('#Belgium-cb-label-CountryFilter').should('be.visible');
   });
 
-  it('When the country is filtered to Belgium then all meetings are associated with Belgium', () => {
+  it('The Country Filter Belgium Option Is Checked After Clicking It', () => {
     cy.get('#Belgium-cb-label-CountryFilter').click();
     cy.get('#Belgium-cb-CountryFilter').should('be.checked');
+  });
+
+  it('When the country is filtered to Belgium then all meetings are associated with Belgium', () => {
+    cy.get('#Belgium-cb-label-CountryFilter').click();
 
     cy.get('#filter-country #btn-update').click();
 

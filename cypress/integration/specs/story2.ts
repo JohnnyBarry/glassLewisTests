@@ -7,6 +7,7 @@ describe('Story 2: Clicking a company name hyperlink leads to a vote card page f
 
   it(`The browser url is set to ${Cypress.env('home_url')}`, () => {
     homePageUtil.assertPageUrl();
+    homePageUtil.assertPageTitle();
   });
 
   it('A Link for the Activision Blizzard Inc company should be present', () => {
@@ -17,7 +18,7 @@ describe('Story 2: Clicking a company name hyperlink leads to a vote card page f
       .should('be.visible');
   });
 
-  it('A Link for the Activision Blizzard Inc company should be present', () => {
+  it('Activision Blizzard Inc appears in the page top banner', () => {
     cy.get('.k-link.k-pager-nav[title="Go to the next page"]').click();
 
     cy.get('table[role=grid] tbody>tr>td:first-of-type>a').should(
