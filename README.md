@@ -4,8 +4,9 @@ Test of Glass Lewis's Web Disclosure public site
 Tests cover Question 2 Acceptance Criteria 1 and 2
 To run tests please 
 
-1. Clone this Branch
-2. Run: npm install
+1. Clone this Branch.
+2. Navigate tot he glassLewisTests directory.
+3. Run: npm install
 
 To run the Cypress Test Runner use command : **npm run cy-open**
 
